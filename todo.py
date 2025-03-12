@@ -1,14 +1,26 @@
-#################################################################FORMATTING##########################################################
+################################################################FORMATTING##########################################################
 # todo -> outputs all tasks
 # todo c {task-name} -> creates task with task-name
 # todo r {task-name} -> removes task with task-name
+# todo h -> prints toinish help page
 # Includes when task was added
-# When task is removed, it is still showed for 3 days
 #####################################################################################################################################
 
 import sys
 from datetime import datetime
 import os
+
+class color:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
 
 class Todo:
 
@@ -29,6 +41,8 @@ class Todo:
                 self.todo_c()
             elif sys.argv[1][0] == 'r':
                 self.todo_r()
+            elif sys.argv[1][0] == 'h':
+                self.todo_h()
             else:
                 print('todo: please provide valid arguments')
                 print('todo: use the -h option to see help')
@@ -67,6 +81,20 @@ class Todo:
                 '''
             f.truncate()
         self.todo()
+
+    def todo_h(self):
+
+        print(color.BOLD + 'Toinish v0.1' + color.END)
+        print('https://github.com/empty-blip/Toinish')
+        print('\nA simple todo app for the terminal\n')
+
+        print(color.BOLD + color.UNDERLINE + 'Usage:' + color.END)
+        print(color.BOLD + '  todo ' + color.END + '<OPTION>\n')
+
+        print(color.BOLD + color.UNDERLINE + 'Options' + color.END)
+        print(color.BOLD + 'c' + color.END + '  creates a new task')
+        print(color.BOLD + 'r' + color.END + '  removes a new task')
+        print(color.BOLD + 'h' + color.END + '  prints this help page')
 
     def open(self, type):
         self.f = open('/' + self.home[1]+'/' + self.home[2]+'/' + '.config/toinish/todo', type)
