@@ -1,7 +1,7 @@
-### Toinish - A todo list in Python
+## Toinish - A todo list in Python
 Toinish *(to-i-nish)* is a todo list made purely of a single Python file.
 
-#### Documentation
+### Documentation
 To create a new task:
 
     todo c {task_name}
@@ -10,7 +10,7 @@ To remove a task:
 
     todo r {task_name}
 
-#### Installation
+### Installation
 To run Toinish, you need to have Python 3 installed
 
 On Unix-based systems, run
