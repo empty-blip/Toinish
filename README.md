@@ -17,7 +17,7 @@ On Unix-based systems, run
 
     touch ~/.config
     cd ~/.config
-    git clone https://github.com/empty-blip/Toinish.git
+    git clone https://github.com/empty-blip/Toinish.git toinish
 
 and then add
 
