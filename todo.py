@@ -1,4 +1,4 @@
-################################################################aFORMATTING##########################################################
+#################################################################FORMATTING##########################################################
 # todo -> outputs all tasks
 # todo c {task-name} -> creates task with task-name
 # todo r {task-name} -> removes task with task-name
@@ -8,10 +8,13 @@
 
 import sys
 from datetime import datetime
+import os
 
 class Todo:
 
     def __init__(self):
+
+        self.home = os.getcwd().split('/')
 
         self.run()
         self.quit()
@@ -52,7 +55,7 @@ class Todo:
 
     def todo_r(self):
         
-        with open("/Users/qwed_1/dev/todo/todo", "r+") as f:
+        with open('/' + self.home[1]+'/' + self.home[2]+'/' + ".config/toinish/todo", "r+") as f:
             d = f.readlines()
             f.seek(0)
             for i in d:
@@ -66,7 +69,7 @@ class Todo:
         self.todo()
 
     def open(self, type):
-        self.f = open('/Users/qwed_1/dev/todo/todo', type)
+        self.f = open('/' + self.home[1]+'/' + self.home[2]+'/' + '.config/toinish/todo', type)
 
     def close(self):
         self.f.close()
