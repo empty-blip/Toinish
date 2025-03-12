@@ -36,7 +36,7 @@ class Todo:
     def todo(self):
 
         self.open('r')
-        print('Toinish')
+        print('Toinish v0.1')
         print(self.f.read())
         self.close()
 
